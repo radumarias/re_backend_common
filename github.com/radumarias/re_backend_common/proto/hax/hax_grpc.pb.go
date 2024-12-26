@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v5.28.3
-// source: re_backend_common/proto/hax.proto
+// source: proto/hax/hax.proto
 
 package hax
 
@@ -199,5 +199,5 @@ var HaxService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "re_backend_common/proto/hax.proto",
+	Metadata: "proto/hax/hax.proto",
 }

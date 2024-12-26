@@ -1,0 +1,71 @@
+syntax = "proto3";
+
+package hax;
+
+import "google/api/annotations.proto"; // Required for grpc-gateway
+option go_package = "github.com/radumarias/re_backend_common/proto/hax;hax";
+
+service HaxService {
+  // Handles user registration
+  rpc Register (RegisterRequest) returns (RegisterResponse) {
+    option (google.api.http) = {
+      post: "/v1/user"
+    };
+  }
+
+  // Handles user login
+  rpc Login (LoginRequest) returns (LoginResponse) {
+    option (google.api.http) = {
+      post: "/v1/auth"
+    };
+  }
+
+  // Hello
+  rpc hello (HelloRequest) returns (HelloResponse) {
+    option (google.api.http) = {
+      get: "/v1/hello"
+    };
+  }
+}
+
+message RegisterRequest {
+  string username = 1;
+  string password = 2;
+  string name = 3;
+  string email = 4;
+}
+
+message RegisterResponse {
+  string message = 1;
+}
+
+message LoginRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message LoginResponse {
+  string message = 1;
+  string token = 2;
+  string name = 3;
+  string email = 4;
+}
+
+message HelloRequest {
+  string token = 1;
+  string payload = 2;
+}
+
+message HelloResponse {
+  string payload = 1;
+}
+
+message ChatRequest {
+  string token = 1;
+  string prompt = 2;
+}
+
+message ChatResponse {
+  string response = 1;
+}
+
