@@ -1,4 +1,4 @@
-module github.com/radumarias/re_backend_common/proto/hax
+module github.com/radumarias/re_backend_common
 
 go 1.23.4
 
